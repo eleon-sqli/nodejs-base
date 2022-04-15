@@ -1,0 +1,16 @@
+<h1>{{ title }}</h1>
+
+<div class="products">
+  {{#each products}}
+    <div class="product">
+      <a href="/{{this.id}}">
+        <span class="product-name">{{this.name}}</span>
+        <span class="product-qty">{{this.qty}}</span>
+      </a>
+    </div>
+  {{/each}}
+</div>
+
+<button onclick="window.location.href='/edit'">
+  Create new product
+</button>
