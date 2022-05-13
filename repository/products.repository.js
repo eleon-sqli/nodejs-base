@@ -12,7 +12,9 @@ export class ProductsRepository {
   }
 
   get() {
-    return this.products;
+    return new Promise((resolve, _reject) => {
+      resolve(this.products);
+    });
   }
 
   getOne(id) {

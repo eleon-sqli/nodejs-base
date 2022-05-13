@@ -5,9 +5,12 @@ export class ProductsController {
     this.repository = repository;
   }
 
-  getAll(req, res) {
-    const products = this.repository.get();
-    res.render('index', { products })
+  getAll(_req, res) {
+    this.repository.get().then((products) => {
+      res.render('index', { products })
+    }).catch((error) => {
+      console.log('Error', error);
+    });
   }
 
   getOne(req, res) {
@@ -16,7 +19,7 @@ export class ProductsController {
     res.render('details', { product })
   }
 
-  editForm(req, res) {
+  editForm(_req, res) {
     res.render('edit', { product: {} });
   }
 

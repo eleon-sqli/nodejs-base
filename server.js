@@ -25,13 +25,13 @@ const controller = new ProductsController(repository);
 
 app.use('/', routes(controller));
 
-app.use((req, res) => {
+app.use((_req, res) => {
   console.log('Route error');
   res.set('Content-Type', 'application/json')
   res.status(404).json({ error: 'Page not found' });
 });
 
-app.use((error, req, res, next) => {
+app.use((error, _req, res, _next) => {
   console.log('Fatal server error', error);
   res.set('Content-Type', 'application/json')
   res.status(500).json({ error: 'Fatal server error' });
