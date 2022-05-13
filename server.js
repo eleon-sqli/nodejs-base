@@ -1,8 +1,8 @@
 import express from 'express';
 import { create } from 'express-handlebars';
 
+import { ProductsRepository } from './repositories/products.repository.js';
 import { ProductsController } from './controllers/products.controller.js';
-import { ProductsRepository } from './repository/products.repository.js';
 import { routes } from './routes/products.routes.js';
 
 const PORT = process.env.PORT || 3000;

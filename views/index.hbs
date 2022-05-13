@@ -1,16 +1,20 @@
-<h1>{{ title }}</h1>
+<div class="navbar">
+  <h1>MNS</h1>
+</div>
 
-<div class="products">
+<div class="products-list">
   {{#each products}}
-    <div class="product">
-      <a href="/{{this.id}}">
-        <span class="product-name">{{this.name}}</span>
-        <span class="product-qty">{{this.qty}}</span>
-      </a>
-    </div>
+  <div class="product">
+    <a href="/{{this.id}}">
+      <span class="product-name">{{this.name}}</span>
+      <span class="product-qty">{{this.qty}}</span>
+    </a>
+  </div>
   {{/each}}
 </div>
 
-<button onclick="window.location.href='/edit'">
-  Create new product
-</button>
+<div class="products-commands">
+  <button onclick="window.location.href='/edit'">
+    Create new product
+  </button>
+</div>
